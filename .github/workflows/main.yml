@@ -5,12 +5,28 @@ on:
   schedule:
     - cron: "*/30 * * * *"
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Get football data
         run: |
-          curl -H "X-Auth-Token: ${{ secrets.FOOTBALL_API_TOKEN }}" \
-          "https://api.football-data.org/v4/matches"
+          curl -s \
+          -H "X-Auth-Token: ${{ secrets.FOOTBALL_API_TOKEN }}" \
+          "https://api.football-data.org/v4/matches" \
+          > data.json
+
+      - name: Save data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git commit -m "Update football data" || echo "No changes"
+          git push
