@@ -3,7 +3,7 @@ name: Update Football Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "0 */6 * * *"
 
 permissions:
   contents: write
@@ -18,10 +18,10 @@ jobs:
 
       - name: Get football data
         run: |
-          curl -s \
+          curl -fsS \
           -H "X-Auth-Token: ${{ secrets.FOOTBALL_API_TOKEN }}" \
-          "https://api.football-data.org/v4/matches" \
-          > data.json
+          "https://api.football-data.org/v4/matches?dateFrom=$(date -u +%Y-%m-%d)&dateTo=$(date -u -d '+30 days' +%Y-%m-%d)" \
+          -o data.json
 
       - name: Save data
         run: |
