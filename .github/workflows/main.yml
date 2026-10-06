@@ -1,0 +1,16 @@
+name: Update Football Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get football data
+        run: |
+          curl -H "X-Auth-Token: ${{ secrets.FOOTBALL_API_TOKEN }}" \
+          "https://api.football-data.org/v4/matches"
