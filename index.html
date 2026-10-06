@@ -6,166 +6,33 @@
 <title>FOOTNAMA | فوتبال‌نما</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial,Tahoma,sans-serif;
-}
-
-body{
-    background:#07111f;
-    color:#fff;
-}
-
-header{
-    background:#0b1728;
-    padding:18px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid #1c3048;
-}
-
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#19e68c;
-}
-
-nav a{
-    color:#ddd;
-    text-decoration:none;
-    margin:0 10px;
-    font-size:15px;
-}
-
-nav a:hover{
-    color:#19e68c;
-}
-
-.hero{
-    padding:70px 6%;
-    text-align:center;
-    background:linear-gradient(135deg,#0b1d32,#07111f);
-}
-
-.hero h1{
-    font-size:48px;
-    margin-bottom:15px;
-}
-
-.hero h1 span{
-    color:#19e68c;
-}
-
-.hero p{
-    color:#aebdcc;
-    font-size:18px;
-}
-
-.container{
-    width:88%;
-    max-width:1200px;
-    margin:40px auto;
-}
-
-.title{
-    font-size:25px;
-    margin-bottom:20px;
-    border-right:4px solid #19e68c;
-    padding-right:12px;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:18px;
-}
-
-.card{
-    background:#0d1b2d;
-    border:1px solid #1d334b;
-    border-radius:14px;
-    padding:22px;
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-    border-color:#19e68c;
-}
-
-.match{
-    text-align:center;
-}
-
-.league{
-    color:#19e68c;
-    font-size:13px;
-    margin-bottom:15px;
-}
-
-.teams{
-    font-size:19px;
-    font-weight:bold;
-    margin-bottom:12px;
-}
-
-.time{
-    color:#9eacbb;
-}
-
-.news h3{
-    margin-bottom:10px;
-}
-
-.news p{
-    color:#aebdcc;
-    line-height:1.8;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:#0d1b2d;
-    border-radius:12px;
-    overflow:hidden;
-}
-
-th,td{
-    padding:14px;
-    text-align:center;
-    border-bottom:1px solid #1d334b;
-}
-
-th{
-    background:#12243a;
-    color:#19e68c;
-}
-
-footer{
-    margin-top:60px;
-    padding:30px;
-    text-align:center;
-    background:#050c16;
-    color:#718095;
-}
-
+*{box-sizing:border-box;margin:0;padding:0;font-family:Tahoma,Arial,sans-serif}
+body{background:#07111f;color:#fff}
+header{background:#0b1728;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1c3048}
+.logo{font-size:27px;font-weight:bold;color:#19e68c}
+nav a{color:#ddd;text-decoration:none;margin:0 9px;font-size:14px}
+nav a:hover{color:#19e68c}
+.hero{padding:65px 6%;text-align:center;background:linear-gradient(135deg,#0b1d32,#07111f)}
+.hero h1{font-size:45px;margin-bottom:15px}
+.hero span{color:#19e68c}
+.hero p{color:#aebdcc;font-size:17px}
+.container{width:88%;max-width:1200px;margin:40px auto}
+.title{font-size:24px;margin-bottom:20px;border-right:4px solid #19e68c;padding-right:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:#0d1b2d;border:1px solid #1d334b;border-radius:14px;padding:22px}
+.match{text-align:center}
+.league{color:#19e68c;font-size:13px;margin-bottom:15px}
+.teams{font-size:18px;font-weight:bold;margin-bottom:12px}
+.time{color:#9eacbb}
+.status{color:#19e68c;margin-top:10px}
+.loading{text-align:center;color:#9eacbb;padding:30px}
+.error{text-align:center;color:#ff7777;padding:20px}
+footer{margin-top:60px;padding:30px;text-align:center;background:#050c16;color:#718095}
 @media(max-width:700px){
-    header{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    nav a{
-        display:inline-block;
-        margin:6px;
-    }
-
-    .hero h1{
-        font-size:36px;
-    }
+header{flex-direction:column;gap:15px}
+nav{text-align:center}
+nav a{display:inline-block;margin:6px}
+.hero h1{font-size:34px}
 }
 </style>
 </head>
@@ -173,73 +40,123 @@ footer{
 <body>
 
 <header>
-    <div class="logo">⚽ FOOTNAMA</div>
+<div class="logo">⚽ FOOTNAMA</div>
 
-    <nav>
-        <a href="#">خانه</a>
-        <a href="#matches">نتایج</a>
-        <a href="#future">بازی‌های آینده</a>
-        <a href="#news">اخبار</a>
-        <a href="#table">جدول</a>
-    </nav>
+<nav>
+<a href="#">خانه</a>
+<a href="#matches">بازی‌ها</a>
+<a href="#future">آینده</a>
+<a href="#news">اخبار</a>
+<a href="#table">جدول‌ها</a>
+</nav>
 </header>
 
 <section class="hero">
-    <h1>به <span>FOOTNAMA</span> خوش آمدید</h1>
-    <p>مرجع فوتبال ایران و جهان؛ نتایج، اخبار، جدول‌ها و نقل‌وانتقالات</p>
+<h1>به <span>FOOTNAMA</span> خوش آمدید</h1>
+<p>مرجع فوتبال ایران و جهان</p>
 </section>
 
 <div class="container" id="matches">
-
-    <h2 class="title">🔥 بازی‌های مهم</h2>
-
-    <div class="cards">
-
-        <div class="card match">
-            <div class="league">لالیگا</div>
-            <div class="teams">رئال مادرید ⚔️ بارسلونا</div>
-            <div class="time">امروز — ۲۲:۳۰</div>
-        </div>
-
-        <div class="card match">
-            <div class="league">لیگ برتر انگلیس</div>
-            <div class="teams">لیورپول ⚔️ منچسترسیتی</div>
-            <div class="time">فردا — ۲۰:۰۰</div>
-        </div>
-
-        <div class="card match">
-            <div class="league">سری آ ایتالیا</div>
-            <div class="teams">اینتر ⚔️ میلان</div>
-            <div class="time">فردا — ۲۲:۱۵</div>
-        </div>
-
-    </div>
+<h2 class="title">🔥 بازی‌های امروز</h2>
+<div id="matchesBox" class="cards">
+<div class="loading">در حال دریافت اطلاعات بازی‌ها...</div>
+</div>
 </div>
 
 <div class="container" id="future">
-
-    <h2 class="title">📅 بازی‌های آینده</h2>
-
-    <div class="cards">
-
-        <div class="card match">
-            <div class="teams">بایرن مونیخ ⚔️ دورتموند</div>
-            <div class="time">شنبه — ۱۹:۳۰</div>
-        </div>
-
-        <div class="card match">
-            <div class="teams">پاری‌سن‌ژرمن ⚔️ مارسی</div>
-            <div class="time">یکشنبه — ۲۱:۰۰</div>
-        </div>
-
-    </div>
+<h2 class="title">📅 بازی‌های آینده</h2>
+<div id="futureBox" class="cards">
+<div class="loading">در حال دریافت اطلاعات...</div>
+</div>
 </div>
 
-<div class="container" id="news">
+<footer>
+⚽ FOOTNAMA © 2026
+<br>
+مرجع فوتبال ایران و جهان
+</footer>
 
-    <h2 class="title">📰 آخرین اخبار فوتبال</h2>
+<script>
+async function loadFootball(){
 
-    <div class="cards">
+const matchesBox=document.getElementById("matchesBox");
+const futureBox=document.getElementById("futureBox");
 
-        <div class="card news">
-            <
+try{
+
+const response=await fetch("./data.json?"+Date.now());
+
+if(!response.ok) throw new Error("data.json not found");
+
+const data=await response.json();
+
+const matches=data.matches || [];
+
+matchesBox.innerHTML="";
+futureBox.innerHTML="";
+
+if(matches.length===0){
+matchesBox.innerHTML='<div class="error">فعلاً بازی‌ای پیدا نشد.</div>';
+return;
+}
+
+const today=new Date().toISOString().slice(0,10);
+
+let todayCount=0;
+let futureCount=0;
+
+matches.forEach(match=>{
+
+const home=match.homeTeam?.name || "تیم میزبان";
+const away=match.awayTeam?.name || "تیم مهمان";
+
+const date=new Date(match.utcDate);
+const dateText=date.toLocaleDateString("fa-IR");
+const timeText=date.toLocaleTimeString("fa-IR",{hour:"2-digit",minute:"2-digit"});
+
+const card=`
+<div class="card match">
+<div class="league">${match.competition?.name || "فوتبال"}</div>
+<div class="teams">${home} ⚔️ ${away}</div>
+<div class="time">${dateText} — ${timeText}</div>
+<div class="status">${match.status || "برنامه‌ریزی شده"}</div>
+</div>
+`;
+
+if(match.utcDate.slice(0,10)===today && todayCount<12){
+matchesBox.innerHTML+=card;
+todayCount++;
+}else if(futureCount<12){
+futureBox.innerHTML+=card;
+futureCount++;
+}
+
+});
+
+if(todayCount===0){
+matchesBox.innerHTML='<div class="error">امروز بازی ثبت‌شده‌ای پیدا نشد.</div>';
+}
+
+if(futureCount===0){
+futureBox.innerHTML='<div class="error">بازی آینده‌ای پیدا نشد.</div>';
+}
+
+}catch(error){
+
+console.log(error);
+
+matchesBox.innerHTML=
+'<div class="error">اطلاعات فوتبال هنوز در حال بروزرسانی است.</div>';
+
+futureBox.innerHTML=
+'<div class="error">لطفاً چند دقیقه دیگر دوباره سایت را باز کنید.</div>';
+
+}
+
+}
+
+loadFootball();
+</script>
+
+</body>
+</html>
